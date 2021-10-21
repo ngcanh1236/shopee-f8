@@ -1,0 +1,106 @@
+:root{
+    --white-color:#fff;
+    --black-color:#000;
+    --text-color:#333;
+    --primary-color:#fb5533;
+    --border-color:#dbdbdb;
+}
+*{
+    box-sizing: inherit;
+}
+html{
+    font-size: 62.5%;
+    line-height: 1.6em;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.grid{
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid__full-width{
+    width: 100%;
+}
+/* animation */
+@keyframes fadein {
+    from{
+        opacity: 0;
+
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes growth {
+    from{
+        transform: scale(0);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/* modal */
+.modal{
+    position: fixed;
+   
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+}
+.modal__layout{
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: fadein linear 0.1s;
+
+}
+.modal__body{
+    --grow-from: 0.7;
+    --grow-to: 1;
+    margin: auto ;
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 1;
+    animation: growth linear 0.1s;
+
+}
+/* button style */
+.btn{
+    border: none;
+    min-width: 122px;
+    height: 34px;
+    padding: 0;
+    text-decoration: none;
+    background-color: var(--white-color);
+    color: var(--text-color);
+    font-size: 1.2rem;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+}
+.btn-nomal:hover{
+    background-color:rgba(0, 0, 0, 0.05);
+}
+.btn.btn--primary{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+
+}
+.btn.btn--disable{
+    cursor: default;
+    background-color: #888;
+    color: #c3c3c3;
+}
